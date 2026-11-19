@@ -1,0 +1,94 @@
+:root{color-scheme:dark;font-family:system-ui,-apple-system,sans-serif;--paper:#fff1da;--orange:#ff9a40;--orange-light:#ffcf8c;--muted:#d2c1d7;--edge:#ffffff26;--ink:#170e24}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:#120b1b;color:var(--paper)}
+[hidden]{display:none!important}
+button{font:800 .9rem system-ui,sans-serif;color:var(--paper);cursor:pointer;min-height:44px}
+button:focus-visible{outline:2px solid #fff;outline-offset:4px}
+button:disabled{cursor:default;opacity:.55}
+#app{width:min(1550px,100%);margin:auto;padding:0 clamp(14px,2.9vw,46px) clamp(14px,2.9vw,40px)}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:14px;height:72px}
+.mark{display:flex;align-items:center;gap:9px}
+.mark b{font-size:1.42rem;font-weight:950;letter-spacing:-.08em;background:var(--orange);color:#27142b;padding:4px 10px;border-radius:7px 7px 7px 1px}
+.mark span{font-size:.57rem;letter-spacing:.095em;font-weight:850;line-height:1.2}
+.top-actions{display:flex;gap:8px}
+.quiet{background:#22172ded;border:1px solid var(--edge);border-radius:8px;padding:6px 13px}
+.quiet:hover{border-color:var(--orange)}
+.primary{background:var(--orange);border:1px solid #ffcf9b;border-radius:8px 8px 8px 2px;color:#29182d;padding:12px 17px;min-height:54px;box-shadow:0 4px 0 #aa4f39,0 9px 24px #0d071a50}
+.primary:hover{background:#ffb967}
+.primary:active{transform:translateY(2px);box-shadow:0 2px 0 #aa4f39}
+#cover{position:relative;isolation:isolate;min-height:clamp(540px, calc(100svh - 105px),855px);display:flex;align-items:center;overflow:hidden;border-radius:20px;border:1px solid #735273;background:#271539;box-shadow:0 20px 70px #08051080}
+#cover::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(90deg,#190f24 2%,#190f24f0 23%,#190f2478 45%,transparent 63%),linear-gradient(0deg,#1f102cce,transparent 28%),url("../assets/citrus-cover.jpg");background-size:cover;background-position:center,center,center 52%}
+.cover-copy{padding:44px clamp(22px,5.2vw,82px) 80px;width:min(100%,630px)}
+.mode{color:var(--orange-light);font:800 .69rem ui-monospace,monospace;letter-spacing:.11em;margin:0 0 15px}
+h1{font-size:clamp(4rem,9.4vw,9.4rem);line-height:.8;letter-spacing:-.1em;font-weight:1000;margin:0 0 27px;font-style:italic;text-shadow:.032em .038em #812e76}
+h1 span{display:block;font-size:.315em;line-height:1.05;color:var(--orange-light);letter-spacing:.01em;margin-top:.55em;text-shadow:none}
+.synopsis{color:#f4e3f1;max-width:34ch;line-height:1.52;margin:0 0 24px}
+.cover-copy .primary{display:inline-flex;align-items:center;gap:25px;font-size:1.02rem;margin-right:7px}
+#help{min-height:50px;background:#21122bdc}
+.cover-roster{position:absolute;bottom:15px;left:clamp(22px,5.2vw,82px);right:20px;display:flex;gap:7px;flex-wrap:wrap}
+.cover-roster span{font-size:.72rem;font-weight:800;background:#1a1125ce;border:1px solid #ffffff38;border-radius:99px;padding:5px 9px}
+.cover-roster span::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;background:var(--team)}
+#game{height:clamp(430px,calc(100svh - 100px),950px);position:relative;overflow:hidden;isolation:isolate;border:1px solid #675081;border-radius:16px;background:#251840;touch-action:none}
+#view,#labels,#damage{position:absolute;inset:0}
+#view canvas{display:block;width:100%;height:100%;outline:none}
+#labels,#damage{pointer-events:none}
+#damage{box-shadow:inset 0 0 85px 22px #ff3b777e;opacity:0}
+.hud{position:absolute;inset:13px 15px auto;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;pointer-events:none}
+.mission,.metrics{background:#1a1028df;border:1px solid #ccc0f047;border-radius:10px;box-shadow:0 10px 30px #08051936}
+.mission{padding:10px 13px;max-width:min(300px,55%);border-left:3px solid var(--orange)}
+.hud span,.status span{display:block;color:var(--orange-light);font:800 .64rem ui-monospace,monospace;letter-spacing:.07em}
+.mission strong{font-size:clamp(1.1rem,2vw,1.8rem);line-height:1.08;letter-spacing:-.048em;display:block;margin:4px 0}
+.mission p{font-size:.8rem;line-height:1.3;color:var(--muted);margin:5px 0 0}
+.metrics{width:min(245px,44%);overflow:hidden}
+.card-meter{display:flex;align-items:center;gap:11px;padding:9px 10px}
+.card-meter div{flex:1;min-width:0}
+.card-icon{display:block;width:24px;height:38px;flex:0 0 24px;object-fit:cover;border-radius:3px;box-shadow:0 0 17px #ff8e4d89;transform:rotate(-10deg)}
+.card-meter strong{font:850 1.4rem ui-monospace,monospace;line-height:1.25;letter-spacing:-.085em}
+progress{display:block;width:100%;height:5px;border:0;border-radius:7px;background:#5a385f;accent-color:var(--orange)}
+progress::-webkit-progress-bar{background:#5a385f;border-radius:7px}
+progress::-webkit-progress-value{background:var(--orange);border-radius:7px}
+.status{display:grid;grid-template-columns:1fr auto;border-top:1px solid var(--edge)}
+.status div{padding:7px 10px}
+.status div+div{border-left:1px solid var(--edge)}
+.status strong{display:block;margin-top:2px;font:800 .91rem ui-monospace,monospace}
+.armor{letter-spacing:.12em;color:#aafcaa}
+.enemy-label,.exit-label,.pickup-label{position:absolute;white-space:nowrap;transform:translate(-50%,-100%);will-change:left,top;color:#fff}
+.enemy-label{font:900 .83rem system-ui,sans-serif;background:#1b1129ed;border:1px solid var(--team);border-radius:4px;padding:2px 6px;box-shadow:0 1px 5px #100921}
+.exit-label{font:900 .84rem ui-monospace,monospace;padding:5px 8px;border:1px solid #9cffac;background:#112921;border-radius:5px}
+.pickup-label{font:900 1rem system-ui,sans-serif;color:#ffd29b;text-shadow:0 2px 4px #171020}
+#toast{position:absolute;top:22%;left:50%;max-width:82%;transform:translateX(-50%);padding:7px 12px;background:#181024ed;border:1px solid #ffaf6b;border-radius:6px;font-size:.84rem;font-weight:850;text-align:center;pointer-events:none}
+.game-bottom{position:absolute;inset:auto 14px 13px;display:flex;align-items:flex-end;justify-content:space-between;gap:7px;pointer-events:none}
+.game-bottom > button{pointer-events:auto}
+.desktop-keys{font-size:.72rem;background:#1b112be8;padding:9px;border:1px solid var(--edge);border-radius:6px;color:#ecdbee}
+kbd{font:750 .69rem ui-monospace,monospace;padding:2px 4px;border:1px solid #ffffff45;margin:0 3px;border-radius:3px}
+.pulse,.fire{background:#29203bee;border:1px solid #ddb494;border-radius:7px;padding:7px 12px}
+.pulse:not(:disabled){color:#211226;background:#ffad62}
+.pulse strong{margin-left:5px}
+.fire{display:none;background:#ff9a40;color:#231327;touch-action:none}
+#joystick{position:absolute;width:84px;height:84px;transform:translate(-50%,-50%);border:2px solid #ffffff80;background:#2213317f;border-radius:50%;pointer-events:none}
+#joystick i{display:block;position:absolute;top:26px;left:26px;width:28px;height:28px;background:#ffb868d9;border-radius:50%}
+dialog{max-width:min(490px,calc(100% - 28px));padding:clamp(17px,4vw,36px);color:var(--paper);background:#261630;border:1px solid #8e5f88;border-top:4px solid var(--orange);border-radius:14px;box-shadow:0 16px 80px #0009}
+dialog::backdrop{background:#140c20c7;backdrop-filter:blur(5px)}
+dialog h2{font-weight:950;font-size:clamp(1.9rem,5vw,3rem);letter-spacing:-.06em;line-height:.96;margin:0 0 13px}
+dialog p{font-size:.9rem;color:var(--muted);line-height:1.45}
+dialog p b{color:var(--paper)}
+.dialog-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}
+@media(max-width:680px){
+  .masthead{height:57px}
+  #cover{min-height:max(555px,calc(100svh - 72px));align-items:flex-end}
+  #cover::before{background-image:linear-gradient(0deg,#1a1026 4%,#1a1026f2 31%,#1a10262b 69%),url("../assets/citrus-cover.jpg");background-position:center,72% center}
+  .cover-copy{padding-bottom:72px}
+  h1{font-size:clamp(3.5rem,14vw,6.5rem);margin-bottom:14px}
+  .synopsis{margin-bottom:14px}
+  #game{height:calc(100svh - 74px);min-height:400px}
+  .hud{inset:6px 6px auto;gap:5px}
+  .mission{padding:6px;max-width:52%}
+  .mission p{font-size:.67rem}
+  .card-meter{padding:7px;gap:4px}
+  .card-icon{width:16px;height:25px;flex-basis:16px;transform:none}
+  .status div{padding:5px}
+  .enemy-label{font-size:.67rem;padding-inline:4px}
+  .desktop-keys{display:none}
+  .game-bottom{inset:auto 7px 9px;justify-content:flex-end}
+}
+@media(pointer:coarse){.fire{display:block}.desktop-keys,.game-bottom kbd{display:none}}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#170d23">
+  <title>X5 Цитрус — До рассвета</title>
+  <link rel="stylesheet" href="css/citrus.css?v=card2">
+</head>
+<body>
+  <main id="app">
+    <header class="masthead">
+      <div class="mark"><b>X5</b><span>КАРТА<br>АПЕЛЬСИН</span></div>
+      <div class="top-actions"><button id="sound" class="quiet" aria-pressed="true">Звук вкл.</button><button id="pause" class="quiet" hidden>Пауза <kbd>Esc</kbd></button></div>
+    </header>
+    <section id="cover" aria-labelledby="title">
+      <div class="cover-copy">
+        <p class="mode">СЮЖЕТНАЯ КАМПАНИЯ · 3 СЕКТОРА</p>
+        <h1 id="title">ЦИТРУС<span>ДО РАССВЕТА</span></h1>
+        <p class="synopsis">Магазин закрылся. Зомби всё ещё в зале. Собери карты «Апельсин» от X5 и пробейся к выходу.</p>
+        <button id="launch" class="primary">Войти в магазин <span aria-hidden="true">↗</span></button>
+        <button id="help" class="quiet">Как играть <span aria-hidden="true">↘</span></button>
+      </div>
+      <div class="cover-roster" aria-label="Зомби-соперники">
+        <span style="--team:#ff7789">Бегун</span><span style="--team:#a2f68c">Громила</span><span style="--team:#79baff">Зигзаг</span><span style="--team:#e9a2ff">Стайный</span>
+      </div>
+    </section>
+    <section id="game" hidden aria-label="Трёхмерная арена">
+      <div id="view"></div>
+      <div id="labels" aria-hidden="true"></div>
+      <div id="damage" aria-hidden="true"></div>
+      <div class="hud">
+        <div class="mission"><span id="chapter"></span><strong id="district"></strong><p id="objective" aria-live="polite"></p></div>
+        <div class="metrics">
+          <div class="card-meter"><img class="card-icon" id="card-artwork" alt=""><div><span>КАРТА АПЕЛЬСИН</span><strong id="cards"></strong><progress id="progress" aria-label="Карты в секторе"></progress></div></div>
+          <div class="status"><div><span>БРОНЯ</span><strong id="armor" class="armor"></strong></div><div><span>ЦЕПОЧКА</span><strong id="combo">×1</strong></div></div>
+        </div>
+      </div>
+      <div id="toast" role="status" hidden></div>
+      <div class="game-bottom">
+        <div class="desktop-keys"><kbd>WASD</kbd> Ходьба <kbd>Пробел</kbd> Автоогонь</div>
+        <button id="pulse" class="pulse" disabled><kbd>E</kbd><span>Цитрус-импульс <strong id="energy"></strong></span></button>
+        <button id="fire" class="fire">Огонь</button>
+      </div>
+      <div id="joystick" aria-hidden="true" hidden><i></i></div>
+    </section>
+    <dialog id="dialog">
+      <p class="mode" id="dialog-eyebrow"></p><h2 id="dialog-title"></h2>
+      <p id="dialog-text"></p>
+      <div id="help-items" hidden>
+        <p><b>Карты «Апельсин»</b> лежат на полу и выпадают из зомби. Набери цель сектора и найди зелёный выход.</p>
+        <p><b>WASD / стрелки</b> — движение. Удерживай мышь для огня по курсору или пробел для автоогня.</p>
+        <p><b>E</b> — импульс. Заряди его тремя картами, чтобы отбросить зомби и притянуть карты поблизости.</p>
+        <p><b>На телефоне</b> двигайся виртуальным стиком слева, а справа удерживай «Огонь».</p>
+      </div>
+      <div class="dialog-buttons"><button id="next" class="primary"></button><button id="home" class="quiet">В меню</button></div>
+    </dialog>
+    <noscript>Чтобы сыграть, включи JavaScript в браузере.</noscript>
+  </main>
+  <script type="module" src="js/citrus.js?v=apelsin"></script>
+</body>
+</html>
